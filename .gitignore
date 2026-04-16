@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+data/raw/
+data/interim/
+data/processed/
+outputs/
+*.pth
+*.pt
+*.ckpt
+*.zip
+*.tar.gz
+Thumbs.db
+.DS_Store

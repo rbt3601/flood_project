@@ -1,0 +1,13 @@
+numpy
+pandas
+matplotlib
+pillow
+opencv-python
+albumentations
+tifffile
+rasterio
+scikit-image
+ipykernel
+notebook
+shapely
+scikit-learn
