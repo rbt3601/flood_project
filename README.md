@@ -111,9 +111,9 @@ flood_project/
 │   ├── inspection/
 │   └── augmentations/
 ├── src/
-│   ├── preprocess_dataset.py
-│   ├── generate_masks.py
-│   └── augmentations.py
+│   ├── preprocess_dataset.ipynb
+│   ├── generate_masks.ipynb
+│   └── augmentations.ipynb
 ├── requirements.txt
 ├── README.md
 └── .gitignore
