@@ -4,8 +4,6 @@ __pycache__/
 .ipynb_checkpoints/
 data/raw/
 data/interim/
-data/processed/
-outputs/
 *.pth
 *.pt
 *.ckpt
