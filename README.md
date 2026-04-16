@@ -4,12 +4,30 @@
 AI for Space – Assignment 2 Group Research Project
 
 ## Project Overview
-This project investigates the application of Convolutional Neural Networks (CNNs) to a remote sensing problem using satellite imagery. Our selected problem is **flood damage assessment from satellite imagery using semantic segmentation**. The goal is to prepare a clean and reproducible pipeline for dataset inspection, preprocessing, mask generation, augmentation, model training, evaluation, and reporting.
+This project focuses on **flood damage assessment from satellite imagery using semantic segmentation**.  
+The current work completed in this repository covers the **data preparation pipeline**, including:
+
+- dataset setup
+- data inspection
+- train/validation/test split creation
+- mask generation from GeoJSON annotations
+- augmentation preview generation
+
+Later stages such as model training, evaluation, comparison, report writing, and presentation will be added by other team members.
+
+---
 
 ## Selected Problem
 **Flood damage assessment using satellite imagery**
 
-The project uses **pre-event** and **post-event** satellite images together with annotations to identify flood-affected regions through a semantic segmentation workflow.
+The project uses:
+- **pre-event satellite images**
+- **post-event satellite images**
+- **GeoJSON annotations**
+
+to prepare a segmentation-ready dataset for CNN-based flood analysis.
+
+---
 
 ## Dataset
 The dataset used is the **Germany Training Public** portion of the extracted SpaceNet 8 flood dataset.
@@ -24,50 +42,41 @@ data/raw/
 └── Germany_Training_Public_reference.csv
 ```
 
-## Work Completed So Far
-The following stages have been completed:
+---
+
+## Work Completed by Rajesh
 
 ### 1. Dataset setup
-- Project directory created
-- Python virtual environment created
-- Required packages installed
-- Raw Germany training dataset downloaded and extracted
+Completed:
+- project directory creation
+- Python virtual environment setup
+- dependency installation
+- raw dataset download and extraction
 
-### 2. Data inspection (T03)
-- Verified presence of:
-  - pre-event images
-  - post-event images
-  - GeoJSON annotations
-  - mapping CSV
-  - reference CSV
-- Loaded and inspected the mapping CSV
-- Built exact image-label pairs using the mapping CSV
-- Verified valid pairs
-- Inspected raster metadata
-- Inspected GeoJSON annotation structure
-- Generated inspection outputs:
-  - sample pre-event images
-  - sample post-event images
-  - sample mask previews
-  - sample overlays
-  - metadata summaries
-  - quality check summaries
+### 2. Data inspection
+Completed:
+- verified pre-event, post-event, annotation, mapping, and reference files
+- loaded and inspected the mapping CSV
+- created exact image-label pairs
+- checked valid pairs
+- inspected raster metadata
+- inspected GeoJSON label structure
+- generated sample previews and summary outputs
 
-### 3. Preprocessing (T04)
-- Split dataset into:
-  - train
-  - validation
-  - test
-- Created `metadata.csv`
-- Generated segmentation masks from GeoJSON annotations
-- Copied matching pre-event and post-event images into processed split folders
-- Updated metadata so that paths point to processed files
-- Kept all paths as **project-relative paths** for portability across laptops
+### 3. Preprocessing
+Completed:
+- created train / validation / test split
+- generated `metadata.csv`
+- copied split-wise pre/post images into processed folders
+- generated mask PNG files from GeoJSON annotations
+- updated metadata to point to processed files
+- used project-relative paths for portability
 
-### 4. Augmentation (T05)
-- Implemented augmentation preview pipeline
-- Generated before/after augmentation samples
-- Verified that masks and images transform together
+### 4. Augmentation preview
+Completed:
+- created augmentation preview pipeline
+- generated original vs augmented image-mask examples
+- verified that masks and images transform together
 
 ---
 
@@ -116,7 +125,7 @@ flood_project/
 
 ### 1. Clone the repository
 ```bash
-git clone <YOUR_REPOSITORY_URL>
+git clone https://github.com/rbt3601/flood_project.git
 cd flood_project
 ```
 
@@ -136,7 +145,7 @@ pip install -r requirements.txt
 ---
 
 ## Required Python Packages
-Typical packages used in this project include:
+This project currently uses:
 
 - pandas
 - numpy
@@ -150,9 +159,9 @@ Typical packages used in this project include:
 
 ---
 
-## How to Run the Current Pipeline
+## How to Run the Completed Pipeline
 
-## Step 1 – Data inspection notebook
+## Step 1 – Run data inspection
 Open and run:
 
 ```text
@@ -161,13 +170,13 @@ notebooks/01_data_inspection.ipynb
 
 This notebook:
 - checks dataset structure
-- loads the mapping CSV
+- loads mapping CSV
 - builds exact pairs
 - verifies valid samples
 - inspects metadata and annotations
-- saves inspection previews and summaries
+- saves sample previews and summaries
 
-### Inspection outputs are saved in:
+### Outputs saved in:
 ```text
 outputs/inspection/
 ```
@@ -177,11 +186,11 @@ Typical outputs:
 - `image_metadata_summary.csv`
 - `quality_check_summary.csv`
 - `t03_summary.csv`
-- sample images and overlays
+- sample previews and overlays
 
 ---
 
-## Step 2 – Preprocess and create dataset split
+## Step 2 – Create dataset split
 Run:
 
 ```bash
@@ -190,8 +199,8 @@ python src/preprocess_dataset.py
 
 This script:
 - reads valid pairs from `outputs/inspection/valid_pairs.csv`
-- creates train/val/test split
-- creates `data/processed/metadata.csv`
+- creates train / val / test split
+- saves `data/processed/metadata.csv`
 
 ---
 
@@ -204,19 +213,17 @@ python src/generate_masks.py
 
 This script:
 - reads `data/processed/metadata.csv`
-- rasterizes GeoJSON annotations into mask PNG files
-- copies matching pre/post images into the correct split folders
+- generates mask PNG files from GeoJSON annotations
+- copies matching pre/post images into processed split folders
 - updates metadata paths to point to processed files
 
-After running this step, each sample should exist in this form:
+After running this step, sample files should exist like:
 
 ```text
 data/processed/train/pre/sample_00000.tif
 data/processed/train/post/sample_00000.tif
 data/processed/train/mask/sample_00000.png
 ```
-
-and similarly for `val` and `test`.
 
 ---
 
@@ -228,11 +235,11 @@ python src/augmentations.py
 ```
 
 This script:
-- reads training samples from `metadata.csv`
+- reads training rows from `metadata.csv`
 - applies augmentation to image-mask pairs
 - saves preview outputs for verification
 
-### Augmentation outputs are saved in:
+### Outputs saved in:
 ```text
 outputs/augmentations/
 ```
@@ -264,7 +271,7 @@ Typical columns:
 - `mask_path`
 - `mask_status`
 
-All paths are stored as **project-relative paths** such as:
+All paths are stored as **project-relative paths**, for example:
 
 ```text
 data/processed/train/pre/sample_00000.tif
@@ -272,95 +279,31 @@ data/processed/train/post/sample_00000.tif
 data/processed/train/mask/sample_00000.png
 ```
 
-This makes the project portable across laptops as long as the same folder structure is preserved.
+---
+
+## Important Notes
+- Use `data/processed/metadata.csv` as the source of truth.
+- Do not hardcode personal laptop paths.
+- Use only project-relative paths.
+- Run scripts from the project root folder.
+- Keep the same folder structure across laptops.
 
 ---
 
-## Important Notes for the Next Team Member
-The next teammate responsible for model development should use:
-
-```text
-data/processed/metadata.csv
-```
-
-as the source of truth.
-
-The model pipeline should load:
-- pre-event image from `pre_path`
-- post-event image from `post_path`
-- segmentation mask from `mask_path`
-
-The current outputs already support:
-- train/validation/test separation
-- segmentation mask availability
-- augmentation preview verification
-
----
-
-## What Is Still To Be Done
-The following stages remain for the next parts of the group project:
-
-### Model stage
-- baseline model selection
-- dataloader creation
-- CNN model implementation
-- training loop
-- validation loop
-
-### Evaluation stage
-- IoU / Dice / Precision / Recall
-- visual prediction inspection
-- error analysis
-- baseline vs improved model comparison
-
-### Final deliverables
-- report writing
-- presentation video
-- README final polishing
-- code cleanup and documentation review
-
----
-
-## Reproducibility Notes
-- Keep the same folder structure
-- Do not hardcode personal laptop paths
-- Use only project-relative paths
-- Run scripts from the project root folder
-- Make sure `metadata.csv` is updated after each preprocessing stage
-
----
-
-## AI Use Declaration
-Generative AI tools were used to support:
-- code drafting
-- pipeline planning
-- documentation structuring
-- debugging support
-
-All generated outputs were reviewed, corrected, and adapted manually before use.
-
----
-
-## Authors / Team
-Group members:
-- Rajesh Bennegere Theertheswara
-- Prajwal
-- Saikiran
-- Divya
-- Reginald, Chimeka Praise
-
----
-
-## Current Status Summary
-Completed:
+## Current Status
+Completed in this repository:
 - dataset setup
 - data inspection
 - valid pair generation
-- split creation
+- train/validation/test split creation
 - mask generation
 - augmentation preview generation
 
-Next:
-- model implementation and training
-- evaluation
-- final report and presentation
+Remaining work will be added later by other team members.
+
+---
+
+## Author
+Completed current data pipeline work by:
+
+- rbt3 - Rajesh Bennegere Theertheswara
