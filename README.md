@@ -194,7 +194,7 @@ Typical outputs:
 Run:
 
 ```bash
-python src/preprocess_dataset.py
+python src/preprocess_dataset.ipynb
 ```
 
 This script:
@@ -208,7 +208,7 @@ This script:
 Run:
 
 ```bash
-python src/generate_masks.py
+python src/generate_masks.ipynb
 ```
 
 This script:
@@ -231,7 +231,7 @@ data/processed/train/mask/sample_00000.png
 Run:
 
 ```bash
-python src/augmentations.py
+python src/augmentations.ipynb
 ```
 
 This script:
