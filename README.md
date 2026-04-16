@@ -307,3 +307,10 @@ Remaining work will be added later by other team members.
 Completed current data pipeline work by:
 
 - rbt3 - Rajesh Bennegere Theertheswara
+
+## Prajwal - Baseline Model and Training
+- Notebook: notebooks/prajwal_baseline_training.ipynb
+- Purpose: Trains a U-Net baseline segmentation model for flood detection
+- Input: data/processed/metadata.csv
+- How to run: open the notebook and run all cells top to bottom
+- Outputs: outputs/prajwal/checkpoints/best_model.pth, outputs/prajwal/loss_curve.png, outputs/prajwal/training_log.csv
