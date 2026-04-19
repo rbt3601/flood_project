@@ -10,4 +10,4 @@ data/interim/
 *.zip
 *.tar.gz
 Thumbs.db
-.DS_Store
+.DS_Store*.pth 
