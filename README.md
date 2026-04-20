@@ -314,3 +314,9 @@ Completed current data pipeline work by:
 - Input: data/processed/metadata.csv
 - How to run: open the notebook and run all cells top to bottom
 - Outputs: outputs/prajwal/checkpoints/best_model.pth, outputs/prajwal/loss_curve.png, outputs/prajwal/training_log.csv
+## Saikiran - Evaluation and Predictions
+- Notebook: notebooks/saikiran_evaluation.ipynb
+- Purpose: evaluates segmentation model
+- Input: trained model + dataset
+- How to run: run all cells
+- Outputs: IoU, Dice, Precision, Recall + prediction images
