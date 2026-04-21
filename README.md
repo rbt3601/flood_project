@@ -320,3 +320,16 @@ Completed current data pipeline work by:
 - Input: trained model + dataset
 - How to run: run all cells
 - Outputs: IoU, Dice, Precision, Recall + prediction images
+
+## Reginald - Failure-Case Analysis
+- Notebook: notebooks/reginald_failure_analysis.ipynb
+- Purpose: reviews the baseline's prediction failures on the test split and
+  identifies the common segmentation mistakes, with representative examples
+- Input: Saikiran's per-sample prediction PNGs
+  (`outputs/saikiran/prediction_masks/`) + test-split images and masks
+- How to run: run all cells top-to-bottom (no training or re-inference)
+- Outputs: per-sample metrics CSV, aggregate metrics JSON, confusion matrix,
+  score distributions, category counts, 5-panel figure per test sample,
+  worst-by-IoU grid, per-category grids, and an auto-generated `summary.md`
+- Full methodology: `docs/failure_analysis.md`
+- Detailed section README: `README_reginald_section.md`
