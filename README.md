@@ -65,7 +65,7 @@ Completed work:
 - training logs and curves
 
 Main notebook:
-- `notebooks/02_prajwal_baseline_training_updated.ipynb`
+- `notebooks/02_prajwal_baseline_training.ipynb`
 
 Main outputs:
 - `outputs/prajwal/`
@@ -178,7 +178,7 @@ flood_project/
 ├── docs/
 ├── notebooks/
 │   ├── 01_data_inspection.ipynb
-│   ├── 02_prajwal_baseline_training_updated.ipynb
+│   ├── 02_prajwal_baseline_training.ipynb
 │   ├── 03_saikiran_evaluation.ipynb
 │   ├── 04_divya_improved_model.ipynb
 │   └── 05_reginald_comparison_error_analysis.ipynb
@@ -366,7 +366,7 @@ Main outputs:
 Open and run:
 
 ```text
-notebooks/02_prajwal_baseline_training_updated.ipynb
+notebooks/02_prajwal_baseline_training.ipynb
 ```
 
 What it does:
@@ -452,7 +452,7 @@ Run the project in this order:
 2. `python src/preprocess_dataset.ipynb`
 3. `python src/generate_masks.ipynb`
 4. `python src/augmentations.ipynb`
-5. `notebooks/02_prajwal_baseline_training_updated.ipynb`
+5. `notebooks/02_prajwal_baseline_training.ipynb`
 6. `notebooks/03_saikiran_evaluation.ipynb`
 7. `notebooks/04_divya_improved_model.ipynb`
 8. `notebooks/05_reginald_comparison_error_analysis.ipynb`
