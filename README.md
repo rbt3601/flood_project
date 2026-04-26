@@ -306,10 +306,10 @@ Main outputs:
 ---
 
 ## Stage B – Create the processed dataset split
-Run from project root:
+Open and run:
 
-```bash
-python src/preprocess_dataset.ipynb
+```text
+src/preprocess_dataset.ipynb
 ```
 
 What it does:
@@ -321,10 +321,10 @@ What it does:
 ---
 
 ## Stage C – Generate masks and processed files
-Run from project root:
+Open and run:
 
-```bash
-python src/generate_masks.ipynb
+```text
+src/generate_masks.ipynb
 ```
 
 What it does:
@@ -345,10 +345,10 @@ The same structure is used for `val` and `test`.
 ---
 
 ## Stage D – Generate augmentation previews
-Run from project root:
+Open and run:
 
-```bash
-python src/augmentations.ipynb
+```text
+src/augmentations.ipynb
 ```
 
 What it does:
