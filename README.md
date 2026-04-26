@@ -111,9 +111,9 @@ flood_project/
 │   ├── inspection/
 │   └── augmentations/
 ├── src/
-│   ├── preprocess_dataset.py
-│   ├── generate_masks.py
-│   └── augmentations.py
+│   ├── preprocess_dataset.ipynb
+│   ├── generate_masks.ipynb
+│   └── augmentations.ipynb
 ├── requirements.txt
 ├── README.md
 └── .gitignore
@@ -191,10 +191,10 @@ Typical outputs:
 ---
 
 ## Step 2 – Create dataset split
-Run:
+Open and run:
 
-```bash
-python src/preprocess_dataset.py
+```text
+src/preprocess_dataset.ipynb
 ```
 
 This script:
@@ -205,10 +205,10 @@ This script:
 ---
 
 ## Step 3 – Generate masks and processed split files
-Run:
+Open and run:
 
-```bash
-python src/generate_masks.py
+```text
+src/generate_masks.ipynb
 ```
 
 This script:
@@ -228,10 +228,10 @@ data/processed/train/mask/sample_00000.png
 ---
 
 ## Step 4 – Generate augmentation previews
-Run:
+Open and run:
 
-```bash
-python src/augmentations.py
+```text
+src/augmentations.ipynb
 ```
 
 This script:
