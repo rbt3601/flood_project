@@ -1,0 +1,6 @@
+Metric,Baseline (Val),Improved (Val),Change,Improved?
+IoU,0.3377,0.3891,0.0514,✓
+Dice/F1,0.5049,0.5602,0.0553,✓
+Precision,0.4129,0.4824,0.0695,✓
+Recall,0.6496,0.6679,0.0183,✓
+Accuracy,0.9842,0.987,0.0028,✓

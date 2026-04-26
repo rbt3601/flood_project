@@ -1,0 +1,6 @@
+Metric,Validation,Test
+IoU,0.3377,0.326
+Dice/F1,0.5049,0.4917
+Precision,0.4129,0.4209
+Recall,0.6496,0.5912
+Accuracy,0.9842,0.9767

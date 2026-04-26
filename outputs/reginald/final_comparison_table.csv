@@ -1,0 +1,6 @@
+Metric,Baseline – Val,Baseline – Test,Attention U-Net – Val,Change (Val),Improved?
+IoU,0.3377,0.326,0.3891,0.0514,✓ Yes
+Dice/F1,0.5049,0.4917,0.5602,0.0553,✓ Yes
+Precision,0.4129,0.4209,0.4824,0.0695,✓ Yes
+Recall,0.6496,0.5912,0.6679,0.0183,✓ Yes
+Accuracy,0.9842,0.9767,0.987,0.0028,✓ Yes

@@ -11,3 +11,7 @@ ipykernel
 notebook
 shapely
 scikit-learn
+torch
+torchvision
+torchaudio
+seaborn
